@@ -66,7 +66,7 @@ const ProjectsSection = () => {
                   <div className="flex items-start justify-between mb-8">
                     <div className="flex items-center space-x-6">
                       <div className="relative">
-                        <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-glow`}>
+                        <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                           <Icon className="w-8 h-8 text-white" />
                         </div>
                         <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent/50 rounded-full animate-ping"></div>
@@ -100,7 +100,7 @@ const ProjectsSection = () => {
                     <div className="space-y-3">
                       {project.achievements.map((achievement, idx) => (
                         <div key={idx} className="flex items-start space-x-3 hover-lift p-2 rounded-lg hover:bg-secondary/20 transition-all duration-300">
-                          <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-muted-foreground leading-relaxed hover:text-foreground transition-colors duration-300">{achievement}</span>
                         </div>
                       ))}
@@ -121,7 +121,7 @@ const ProjectsSection = () => {
                   {/* Actions */}
                   <div className="flex space-x-4">
                     <Button 
-                      className="flex-1 btn-hero hover-glow"
+                      className="flex-1 btn-hero"
                       onClick={() => window.open(project.githubUrl, '_blank')}
                     >
                       <Github className="w-5 h-5 mr-2" />

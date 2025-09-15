@@ -26,7 +26,7 @@ const ExperienceSection = () => {
               {/* Company Info */}
               <div className="flex-shrink-0 text-center lg:text-left">
                 <div className="relative inline-block mb-6">
-                  <div className="w-20 h-20 bg-gradient-primary rounded-3xl flex items-center justify-center animate-glow hover:scale-110 transition-all duration-300">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-3xl flex items-center justify-center hover:scale-110 transition-all duration-300">
                     <Building2 className="w-10 h-10 text-white" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-ping"></div>

@@ -49,7 +49,7 @@ const SkillsSection = () => {
               >
                 <div className="flex items-center space-x-6 mb-8">
                   <div className="relative">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-glow`}>
+                    <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/50 rounded-full animate-ping"></div>
@@ -84,7 +84,7 @@ const SkillsSection = () => {
             ].map((proficiency, index) => (
               <div key={index} className="text-center group animate-scale-in hover-lift" style={{animationDelay: proficiency.delay}}>
                 <div className="relative mb-6">
-                  <div className={`w-28 h-28 bg-gradient-to-r ${proficiency.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-500 animate-glow`}>
+                  <div className={`w-28 h-28 bg-gradient-to-r ${proficiency.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-500`}>
                     <span className="text-3xl font-bold text-white">{proficiency.percentage}</span>
                   </div>
                   <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

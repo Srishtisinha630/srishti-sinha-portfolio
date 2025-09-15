@@ -145,7 +145,7 @@ const ContactSection = () => {
               <div className="mt-10 pt-8 border-t border-border/30">
                 <Button
                   onClick={downloadResume}
-                  className="w-full btn-hero hover-glow text-lg py-4"
+                  className="w-full btn-hero text-lg py-4"
                 >
                   <Download className="w-5 h-5 mr-3" />
                   Download Resume (PDF)
@@ -208,7 +208,7 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button type="submit" className="w-full btn-hero hover-glow text-lg py-6 animate-slide-up" style={{animationDelay: "1s"}}>
+              <Button type="submit" className="w-full btn-hero text-lg py-6 animate-slide-up" style={{animationDelay: "1s"}}>
                 <Send className="w-5 h-5 mr-3" />
                 Send Message
               </Button>

@@ -67,7 +67,7 @@ const AchievementsSection = () => {
               >
                 <div className="flex items-center space-x-6 mb-8">
                   <div className="relative">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${achievement.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-glow`}>
+                    <div className={`w-16 h-16 bg-gradient-to-r ${achievement.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/50 rounded-full animate-ping"></div>
@@ -78,7 +78,7 @@ const AchievementsSection = () => {
                 <div className="space-y-4">
                   {achievement.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex items-start space-x-4 hover-lift p-3 rounded-xl hover:bg-secondary/20 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.2 + itemIndex * 0.1}s`}}>
-                      <div className="w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full mt-1 flex-shrink-0 animate-pulse"></div>
+                      <div className="w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full mt-1 flex-shrink-0"></div>
                       <span className="leading-relaxed hover:text-foreground transition-colors duration-300">{item}</span>
                     </div>
                   ))}

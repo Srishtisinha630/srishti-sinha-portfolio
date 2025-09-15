@@ -45,7 +45,7 @@ const AboutSection = () => {
                 style={{animationDelay: `${index * 0.15}s`}}
               >
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-primary rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-glow">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Icon className="w-10 h-10 text-white" />
                   </div>
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent/30 rounded-full animate-ping group-hover:animate-bounce"></div>
@@ -77,7 +77,7 @@ const AboutSection = () => {
                   { text: "Reduced project rework by ~10%", delay: "1.4s" }
                 ].map((achievement, index) => (
                   <div key={index} className="flex items-center space-x-4 animate-slide-up" style={{animationDelay: achievement.delay}}>
-                    <div className="w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full animate-pulse"></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full"></div>
                     <span className="text-base font-medium">{achievement.text}</span>
                   </div>
                 ))}

@@ -197,10 +197,6 @@ All colors MUST be HSL. Professional blue/teal accent theme.
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
   }
   
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.3)];
-  }
-  
   /* Animation Classes */
   .animate-float {
     animation: float 6s ease-in-out infinite;
