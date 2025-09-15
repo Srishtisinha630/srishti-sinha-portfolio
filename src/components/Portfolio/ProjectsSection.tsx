@@ -55,7 +55,7 @@ const ProjectsSection = () => {
             return (
               <div 
                 key={project.id}
-                className="project-card animate-scale-in"
+                className="project-card group animate-scale-in"
                 style={{animationDelay: `${index * 0.2}s`}}
               >
                 <div className="relative">

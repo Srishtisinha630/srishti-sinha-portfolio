@@ -147,7 +147,7 @@ All colors MUST be HSL. Professional blue/teal accent theme.
   }
   
   .project-card {
-    @apply portfolio-card group cursor-pointer overflow-hidden;
+    @apply portfolio-card cursor-pointer overflow-hidden;
   }
   
   .skill-tag {
