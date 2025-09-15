@@ -52,7 +52,7 @@ All colors MUST be HSL. Professional blue/teal accent theme.
     --shadow-card: 0 4px 12px -2px hsl(var(--primary) / 0.08);
     --shadow-hover: 0 8px 24px -4px hsl(var(--primary) / 0.12);
     
-    /* Animations */
+    /* Remove all blinking/ping animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 

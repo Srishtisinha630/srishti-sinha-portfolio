@@ -5,6 +5,15 @@ import { MapPin, Mail, Phone, Github, Linkedin, Download, Send } from "lucide-re
 import { useState } from "react";
 
 const ContactSection = () => {
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Srishti_Sinha_Resume.pdf';
+    link.download = 'Srishti_Sinha_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -88,10 +97,9 @@ const ContactSection = () => {
                   return (
                     <div key={index} className="flex items-center space-x-6 hover-lift p-4 rounded-xl hover:bg-secondary/20 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
                       <div className="relative">
-                        <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 animate-glow">
+                        <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300">
                           <Icon className="w-6 h-6 text-white" />
                         </div>
-                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent/50 rounded-full animate-ping"></div>
                       </div>
                       <div>
                         <div className="text-sm text-muted-foreground mb-1 uppercase tracking-wider">{info.label}</div>
@@ -135,7 +143,10 @@ const ContactSection = () => {
               
               {/* Resume Download */}
               <div className="mt-10 pt-8 border-t border-border/30">
-                <Button className="w-full btn-hero hover-glow text-lg py-4">
+                <Button
+                  onClick={downloadResume}
+                  className="w-full btn-hero hover-glow text-lg py-4"
+                >
                   <Download className="w-5 h-5 mr-3" />
                   Download Resume (PDF)
                 </Button>
@@ -205,7 +216,7 @@ const ContactSection = () => {
             
             <div className="mt-8 text-center text-muted-foreground animate-fade-in" style={{animationDelay: "1.2s"}}>
               <div className="inline-flex items-center px-4 py-2 bg-secondary/30 backdrop-blur-sm rounded-full">
-                <div className="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse"></div>
+                <div className="w-2 h-2 bg-accent rounded-full mr-2"></div>
                 I'll get back to you within 24 hours!
               </div>
             </div>
