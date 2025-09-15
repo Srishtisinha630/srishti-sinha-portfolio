@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,15 +49,6 @@ const Navigation = () => {
     }
   };
 
-  const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/Srishti_Sinha_Resume.pdf';
-    link.download = 'Srishti_Sinha_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card mx-4 mt-4 rounded-2xl">
       <div className="container mx-auto px-6">
@@ -82,14 +73,6 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <Button
-              onClick={downloadResume}
-              className="btn-hero ml-4"
-              size="sm"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Resume
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,14 +105,6 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <Button
-                onClick={downloadResume}
-                className="w-full btn-hero mt-4"
-                size="sm"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
-              </Button>
             </div>
           </div>
         )}
