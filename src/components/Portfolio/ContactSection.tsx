@@ -74,9 +74,9 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="portfolio-card">
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
+            <div className="glass-card animate-scale-in">
+              <h3 className="text-3xl font-bold mb-6 gradient-text-enhanced">Let's Connect</h3>
+              <p className="text-muted-foreground mb-10 leading-relaxed text-lg">
                 I'm always interested in hearing about new opportunities, 
                 whether it's a full-time position, freelance project, or just 
                 a chat about technology and development.
@@ -86,21 +86,24 @@ const ContactSection = () => {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <div key={index} className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-white" />
+                    <div key={index} className="flex items-center space-x-6 hover-lift p-4 rounded-xl hover:bg-secondary/20 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+                      <div className="relative">
+                        <div className="w-14 h-14 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 animate-glow">
+                          <Icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent/50 rounded-full animate-ping"></div>
                       </div>
                       <div>
-                        <div className="text-sm text-muted-foreground">{info.label}</div>
+                        <div className="text-sm text-muted-foreground mb-1 uppercase tracking-wider">{info.label}</div>
                         {info.link ? (
                           <a 
                             href={info.link}
-                            className="font-semibold hover:text-primary transition-colors duration-300"
+                            className="font-bold text-lg hover:text-primary transition-colors duration-300"
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <div className="font-semibold">{info.value}</div>
+                          <div className="font-bold text-lg">{info.value}</div>
                         )}
                       </div>
                     </div>
@@ -109,9 +112,9 @@ const ContactSection = () => {
               </div>
               
               {/* Social Links */}
-              <div className="mt-8 pt-8 border-t border-border">
-                <div className="text-sm text-muted-foreground mb-4">Follow me on</div>
-                <div className="flex space-x-4">
+              <div className="mt-10 pt-8 border-t border-border/30">
+                <div className="text-muted-foreground mb-6 font-medium">Follow me on</div>
+                <div className="flex space-x-6">
                   {socialLinks.map((social, index) => {
                     const Icon = social.icon;
                     return (
@@ -120,9 +123,10 @@ const ContactSection = () => {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-10 h-10 bg-secondary rounded-lg flex items-center justify-center text-muted-foreground transition-all duration-300 hover:scale-110 ${social.color}`}
+                        className="w-14 h-14 bg-secondary/50 backdrop-blur-sm rounded-2xl flex items-center justify-center text-muted-foreground transition-all duration-300 hover:scale-110 hover:bg-primary/10 hover:text-primary animate-scale-in"
+                        style={{animationDelay: `${0.4 + index * 0.1}s`}}
                       >
-                        <Icon className="w-5 h-5" />
+                        <Icon className="w-6 h-6" />
                       </a>
                     );
                   })}
@@ -130,9 +134,9 @@ const ContactSection = () => {
               </div>
               
               {/* Resume Download */}
-              <div className="mt-8 pt-8 border-t border-border">
-                <Button className="w-full btn-hero">
-                  <Download className="w-4 h-4 mr-2" />
+              <div className="mt-10 pt-8 border-t border-border/30">
+                <Button className="w-full btn-hero hover-glow text-lg py-4">
+                  <Download className="w-5 h-5 mr-3" />
                   Download Resume (PDF)
                 </Button>
               </div>
@@ -140,12 +144,12 @@ const ContactSection = () => {
           </div>
           
           {/* Contact Form */}
-          <div className="portfolio-card">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+          <div className="glass-card animate-scale-in" style={{animationDelay: "0.2s"}}>
+            <h3 className="text-3xl font-bold mb-8 gradient-text-enhanced">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 gap-8">
+                <div className="animate-slide-up" style={{animationDelay: "0.4s"}}>
+                  <label htmlFor="name" className="block font-semibold mb-3 text-lg">
                     Full Name
                   </label>
                   <Input
@@ -156,12 +160,12 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your full name"
-                    className="transition-all duration-300 focus:ring-2 focus:ring-primary"
+                    className="transition-all duration-300 focus:ring-2 focus:ring-primary focus:scale-105 bg-secondary/20 backdrop-blur-sm border-border/30 rounded-xl h-14 text-lg"
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <div className="animate-slide-up" style={{animationDelay: "0.6s"}}>
+                  <label htmlFor="email" className="block font-semibold mb-3 text-lg">
                     Email Address
                   </label>
                   <Input
@@ -172,12 +176,12 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="your.email@example.com"
-                    className="transition-all duration-300 focus:ring-2 focus:ring-primary"
+                    className="transition-all duration-300 focus:ring-2 focus:ring-primary focus:scale-105 bg-secondary/20 backdrop-blur-sm border-border/30 rounded-xl h-14 text-lg"
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <div className="animate-slide-up" style={{animationDelay: "0.8s"}}>
+                  <label htmlFor="message" className="block font-semibold mb-3 text-lg">
                     Message
                   </label>
                   <Textarea
@@ -187,20 +191,23 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Tell me about your project or just say hello..."
-                    rows={5}
-                    className="transition-all duration-300 focus:ring-2 focus:ring-primary resize-none"
+                    rows={6}
+                    className="transition-all duration-300 focus:ring-2 focus:ring-primary focus:scale-105 resize-none bg-secondary/20 backdrop-blur-sm border-border/30 rounded-xl text-lg"
                   />
                 </div>
               </div>
               
-              <Button type="submit" className="w-full btn-hero">
-                <Send className="w-4 h-4 mr-2" />
+              <Button type="submit" className="w-full btn-hero hover-glow text-lg py-6 animate-slide-up" style={{animationDelay: "1s"}}>
+                <Send className="w-5 h-5 mr-3" />
                 Send Message
               </Button>
             </form>
             
-            <div className="mt-6 text-center text-sm text-muted-foreground">
-              I'll get back to you within 24 hours!
+            <div className="mt-8 text-center text-muted-foreground animate-fade-in" style={{animationDelay: "1.2s"}}>
+              <div className="inline-flex items-center px-4 py-2 bg-secondary/30 backdrop-blur-sm rounded-full">
+                <div className="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse"></div>
+                I'll get back to you within 24 hours!
+              </div>
             </div>
           </div>
         </div>

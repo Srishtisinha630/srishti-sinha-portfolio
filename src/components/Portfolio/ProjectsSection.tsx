@@ -55,55 +55,63 @@ const ProjectsSection = () => {
             return (
               <div 
                 key={project.id}
-                className="project-card group animate-scale-in"
-                style={{animationDelay: `${index * 0.2}s`}}
+                className="glass-card group animate-scale-in hover-lift overflow-hidden relative"
+                style={{animationDelay: `${index * 0.3}s`}}
               >
-                <div className="relative">
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                
+                <div className="relative z-10">
                   {/* Project Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 bg-gradient-to-r ${project.gradient} rounded-xl flex items-center justify-center`}>
-                        <Icon className="w-6 h-6 text-white" />
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex items-center space-x-6">
+                      <div className="relative">
+                        <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-glow`}>
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent/50 rounded-full animate-ping"></div>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">{project.title}</h3>
-                        <p className="text-muted-foreground text-sm">{project.subtitle}</p>
+                        <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                        <p className="text-muted-foreground">{project.subtitle}</p>
                       </div>
                     </div>
                     
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="text-muted-foreground hover:text-primary"
+                      className="text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-xl p-3 transition-all duration-300 hover:scale-110"
                       onClick={() => window.open(project.githubUrl, '_blank')}
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-5 h-5" />
                     </Button>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
+                  <div className="mb-8">
+                    <p className="text-muted-foreground leading-relaxed text-lg group-hover:text-foreground/90 transition-colors duration-300">
+                      {project.description}
+                    </p>
+                  </div>
                   
                   {/* Achievements */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider">Key Features</h4>
-                    <div className="space-y-2">
+                  <div className="mb-8">
+                    <h4 className="font-bold mb-4 text-lg gradient-text-enhanced uppercase tracking-wide">Key Features</h4>
+                    <div className="space-y-3">
                       {project.achievements.map((achievement, idx) => (
-                        <div key={idx} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm text-muted-foreground">{achievement}</span>
+                        <div key={idx} className="flex items-start space-x-3 hover-lift p-2 rounded-lg hover:bg-secondary/20 transition-all duration-300">
+                          <div className="w-2 h-2 bg-gradient-to-r from-accent to-primary rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
+                          <span className="text-muted-foreground leading-relaxed hover:text-foreground transition-colors duration-300">{achievement}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                   
                   {/* Technologies */}
-                  <div className="mb-6">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-8">
+                    <div className="flex flex-wrap gap-3">
                       {project.technologies.map((tech, idx) => (
-                        <span key={idx} className="skill-tag">
+                        <span key={idx} className="skill-tag hover:scale-110 animate-scale-in" style={{animationDelay: `${idx * 0.05}s`}}>
                           {tech}
                         </span>
                       ))}
@@ -111,20 +119,20 @@ const ProjectsSection = () => {
                   </div>
                   
                   {/* Actions */}
-                  <div className="flex space-x-3">
+                  <div className="flex space-x-4">
                     <Button 
-                      className="flex-1 btn-hero"
+                      className="flex-1 btn-hero hover-glow"
                       onClick={() => window.open(project.githubUrl, '_blank')}
                     >
-                      <Github className="w-4 h-4 mr-2" />
+                      <Github className="w-5 h-5 mr-2" />
                       View Code
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="btn-outline-hero"
+                      className="btn-outline-hero hover:scale-105"
                       onClick={() => window.open(project.githubUrl, '_blank')}
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-5 h-5" />
                     </Button>
                   </div>
                 </div>

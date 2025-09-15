@@ -62,21 +62,24 @@ const AchievementsSection = () => {
             return (
               <div 
                 key={index}
-                className="portfolio-card group animate-scale-in"
-                style={{animationDelay: `${index * 0.1}s`}}
+                className="glass-card group animate-scale-in hover-lift"
+                style={{animationDelay: `${index * 0.2}s`}}
               >
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${achievement.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-6 h-6 text-white" />
+                <div className="flex items-center space-x-6 mb-8">
+                  <div className="relative">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${achievement.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 animate-glow`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/50 rounded-full animate-ping"></div>
                   </div>
-                  <h3 className="text-xl font-bold">{achievement.category}</h3>
+                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">{achievement.category}</h3>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {achievement.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm leading-relaxed">{item}</span>
+                    <div key={itemIndex} className="flex items-start space-x-4 hover-lift p-3 rounded-xl hover:bg-secondary/20 transition-all duration-300 animate-slide-up" style={{animationDelay: `${index * 0.2 + itemIndex * 0.1}s`}}>
+                      <div className="w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full mt-1 flex-shrink-0 animate-pulse"></div>
+                      <span className="leading-relaxed hover:text-foreground transition-colors duration-300">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -86,23 +89,23 @@ const AchievementsSection = () => {
         </div>
         
         {/* Stats Section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gradient mb-2">4+</div>
-            <p className="text-sm text-muted-foreground">Hackathons Led</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gradient mb-2">2+</div>
-            <p className="text-sm text-muted-foreground">Certifications</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gradient mb-2">3</div>
-            <p className="text-sm text-muted-foreground">Major Projects</p>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gradient mb-2">1</div>
-            <p className="text-sm text-muted-foreground">Academic Topper</p>
-          </div>
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            { number: "4+", label: "Hackathons Led", delay: "0.8s" },
+            { number: "2+", label: "Certifications", delay: "1s" },
+            { number: "3", label: "Major Projects", delay: "1.2s" },
+            { number: "1", label: "Academic Topper", delay: "1.4s" }
+          ].map((stat, index) => (
+            <div key={index} className="text-center group animate-scale-in hover-lift" style={{animationDelay: stat.delay}}>
+              <div className="relative mb-4">
+                <div className="text-5xl font-bold gradient-text-enhanced mb-2 group-hover:scale-110 transition-transform duration-300">
+                  {stat.number}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+              </div>
+              <p className="text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

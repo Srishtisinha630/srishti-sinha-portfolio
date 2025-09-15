@@ -129,61 +129,94 @@ All colors MUST be HSL. Professional blue/teal accent theme.
 @layer components {
   /* Hero Section Styles */
   .hero-section {
-    @apply bg-gradient-to-br from-hero-bg to-background min-h-screen;
+    @apply bg-gradient-to-br from-hero-bg to-background min-h-screen relative overflow-hidden;
   }
   
   .hero-content {
-    @apply container mx-auto px-6 lg:px-8 py-20;
+    @apply container mx-auto px-6 lg:px-8 py-20 relative z-10;
   }
   
   .hero-grid {
     @apply grid lg:grid-cols-2 gap-12 lg:gap-20 items-center;
   }
   
-  /* Card Styles */
+  /* Modern Card Styles */
   .portfolio-card {
-    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-hover hover:-translate-y-1;
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl p-8 transition-all duration-500 hover:shadow-hover hover:-translate-y-2 hover:bg-card/80 hover:border-border/80;
     box-shadow: var(--shadow-card);
   }
   
   .project-card {
-    @apply portfolio-card cursor-pointer overflow-hidden;
+    @apply portfolio-card cursor-pointer overflow-hidden hover:scale-[1.02] relative;
   }
   
   .skill-tag {
-    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground border border-border;
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-secondary/80 backdrop-blur-sm text-secondary-foreground border border-border/30 transition-all duration-300 hover:bg-primary/10 hover:border-primary/30 hover:scale-105;
   }
   
-  /* Button Variants */
+  /* Enhanced Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary-dark hover:to-accent-dark transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-primary via-primary-light to-accent text-primary-foreground hover:from-primary-dark hover:via-primary hover:to-accent-dark transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm relative overflow-hidden;
   }
   
   .btn-outline-hero {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+    @apply border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 backdrop-blur-sm hover:border-primary hover:shadow-lg relative overflow-hidden;
+  }
+  
+  /* Glass Morphism Card */
+  .glass-card {
+    @apply bg-card/30 backdrop-blur-xl border border-border/20 rounded-3xl transition-all duration-500 hover:bg-card/50 hover:border-border/40;
+    box-shadow: 0 8px 32px -8px hsl(var(--primary) / 0.1);
+  }
+  
+  /* Floating Elements */
+  .floating-element {
+    @apply absolute pointer-events-none opacity-20 animate-float;
   }
   
   /* Section Styles */
   .section-container {
-    @apply py-20 px-6 lg:px-8;
+    @apply py-24 px-6 lg:px-8 relative;
   }
   
   .section-title {
-    @apply text-3xl lg:text-4xl font-bold text-foreground mb-4 text-center;
+    @apply text-3xl lg:text-4xl font-bold text-foreground mb-6 text-center tracking-tight;
   }
   
   .section-subtitle {
-    @apply text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto;
+    @apply text-lg text-muted-foreground text-center mb-16 max-w-2xl mx-auto leading-relaxed;
+  }
+  
+  /* Modern Gradient Text */
+  .gradient-text-enhanced {
+    @apply bg-gradient-to-r from-primary via-accent to-primary-light bg-clip-text text-transparent animate-gradient;
+  }
+  
+  /* Enhanced Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.3)];
   }
   
   /* Animation Classes */
   .animate-float {
-    animation: float 3s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
   }
   
   .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 4s ease infinite;
+    background-size: 300% 300%;
+    animation: gradient 6s ease infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 3s infinite;
   }
 }
 
@@ -210,12 +243,36 @@ All colors MUST be HSL. Professional blue/teal accent theme.
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(2deg); }
+  66% { transform: translateY(-5px) rotate(-2deg); }
 }
 
 @keyframes gradient {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { 
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% { 
+    transform: translateY(-8px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
 }

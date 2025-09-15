@@ -20,46 +20,61 @@ const ExperienceSection = () => {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="portfolio-card">
-            <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="glass-card p-10 animate-scale-in">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-10">
               {/* Company Info */}
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-4">
-                  <Building2 className="w-8 h-8 text-white" />
+              <div className="flex-shrink-0 text-center lg:text-left">
+                <div className="relative inline-block mb-6">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-3xl flex items-center justify-center animate-glow hover:scale-110 transition-all duration-300">
+                    <Building2 className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-ping"></div>
                 </div>
-                <div className="text-center lg:text-left">
-                  <h3 className="text-xl font-bold">Cognizant Technology Solutions</h3>
-                  <p className="text-primary font-semibold">Full Stack Developer Intern</p>
-                  <div className="flex items-center justify-center lg:justify-start mt-2 text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4 mr-1" />
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-bold gradient-text-enhanced">Cognizant Technology Solutions</h3>
+                  <p className="text-primary font-bold text-lg">Full Stack Developer Intern</p>
+                  <div className="flex items-center justify-center lg:justify-start text-muted-foreground bg-secondary/50 backdrop-blur-sm rounded-full px-4 py-2">
+                    <Calendar className="w-4 h-4 mr-2" />
                     May 2025 – Aug 2025
                   </div>
                 </div>
               </div>
               
               {/* Achievements */}
-              <div className="flex-1">
-                <h4 className="text-lg font-semibold mb-4">Key Achievements</h4>
-                <div className="grid gap-3">
-                  {achievements.map((achievement, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-start space-x-3 group animate-fade-in"
-                      style={{animationDelay: `${index * 0.1}s`}}
-                    >
-                      <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200" />
-                      <span className="text-sm leading-relaxed">{achievement}</span>
-                    </div>
-                  ))}
+              <div className="flex-1 space-y-8">
+                <div>
+                  <h4 className="text-2xl font-bold mb-6 gradient-text-enhanced">Key Achievements</h4>
+                  <div className="space-y-4">
+                    {achievements.map((achievement, index) => (
+                      <div 
+                        key={index}
+                        className="flex items-start space-x-4 group animate-slide-up hover-lift p-4 rounded-xl hover:bg-secondary/20 transition-all duration-300"
+                        style={{animationDelay: `${index * 0.1}s`}}
+                      >
+                        <div className="relative">
+                          <CheckCircle className="w-6 h-6 text-accent mt-1 flex-shrink-0 group-hover:scale-125 group-hover:text-primary transition-all duration-300" />
+                          <div className="absolute -inset-1 bg-accent/20 rounded-full opacity-0 group-hover:opacity-100 animate-ping"></div>
+                        </div>
+                        <span className="leading-relaxed text-base group-hover:text-foreground transition-colors duration-300">{achievement}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {["ASP.NET Core", "Angular", "SQL Server", "EF Core", "NUnit", "Moq", "LINQ", "Repository Pattern"].map((tech, index) => (
-                    <span key={index} className="skill-tag">
-                      {tech}
-                    </span>
-                  ))}
+                <div className="space-y-4">
+                  <h5 className="text-lg font-semibold text-muted-foreground">Technologies Used</h5>
+                  <div className="flex flex-wrap gap-3">
+                    {["ASP.NET Core", "Angular", "SQL Server", "EF Core", "NUnit", "Moq", "LINQ", "Repository Pattern"].map((tech, index) => (
+                      <span 
+                        key={index} 
+                        className="skill-tag hover:scale-110 animate-scale-in"
+                        style={{animationDelay: `${0.8 + index * 0.05}s`}}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
