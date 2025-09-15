@@ -32,7 +32,7 @@ const ContactSection = () => {
     try {
       await emailjs.send(
         'service_8z3rn6u', // Service ID
-        'template_4flcsrc', // Template ID
+        'template_648s04u', // Template ID
         {
           from_name: formData.name,
           from_email: formData.email,
