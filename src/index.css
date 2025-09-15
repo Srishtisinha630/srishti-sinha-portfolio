@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Modern Portfolio Design System for Srishti Sinha
+All colors MUST be HSL. Professional blue/teal accent theme.
 */
 
 @layer base {
@@ -17,26 +17,44 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
+    --primary: 197 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 197 100% 55%;
+    --primary-dark: 197 100% 35%;
+    
+    --secondary: 220 14% 96%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 220 14% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 174 72% 56%;
+    --accent-foreground: 0 0% 100%;
+    
+    --accent-light: 174 72% 66%;
+    --accent-dark: 174 72% 46%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 197 100% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Portfolio specific colors */
+    --hero-bg: 220 20% 98%;
+    --section-bg: 0 0% 100%;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--hero-bg)), hsl(var(--background)));
+    --shadow-card: 0 4px 12px -2px hsl(var(--primary) / 0.08);
+    --shadow-hover: 0 8px 24px -4px hsl(var(--primary) / 0.12);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,104 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-section {
+    @apply bg-gradient-to-br from-hero-bg to-background min-h-screen;
+  }
+  
+  .hero-content {
+    @apply container mx-auto px-6 lg:px-8 py-20;
+  }
+  
+  .hero-grid {
+    @apply grid lg:grid-cols-2 gap-12 lg:gap-20 items-center;
+  }
+  
+  /* Card Styles */
+  .portfolio-card {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-hover hover:-translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .project-card {
+    @apply portfolio-card group cursor-pointer overflow-hidden;
+  }
+  
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground border border-border;
+  }
+  
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground hover:from-primary-dark hover:to-accent-dark transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-outline-hero {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+  
+  /* Section Styles */
+  .section-container {
+    @apply py-20 px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl lg:text-4xl font-bold text-foreground mb-4 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto;
+  }
+  
+  /* Animation Classes */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 4s ease infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
