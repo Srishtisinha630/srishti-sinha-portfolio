@@ -217,7 +217,7 @@ const ContactSection = () => {
             <div className="mt-8 text-center text-muted-foreground animate-fade-in" style={{animationDelay: "1.2s"}}>
               <div className="inline-flex items-center px-4 py-2 bg-secondary/30 backdrop-blur-sm rounded-full">
                 <div className="w-2 h-2 bg-accent rounded-full mr-2"></div>
-                I'll get back to you within 24 hours!
+                I'll get back to you within 12 hours!
               </div>
             </div>
           </div>
