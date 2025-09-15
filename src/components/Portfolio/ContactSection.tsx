@@ -3,8 +3,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Mail, Phone, Github, Linkedin, Download, Send } from "lucide-react";
 import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const downloadResume = () => {
     const link = document.createElement('a');
     link.href = '/Srishti_Sinha_Resume.pdf';
@@ -20,11 +25,43 @@ const ContactSection = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission - would typically send to backend
-    const mailtoLink = `mailto:srishtisinha630@gmail.com?subject=Contact from ${formData.name}&body=${formData.message}%0D%0A%0D%0AFrom: ${formData.email}`;
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_8z3rn6u', // Service ID
+        'template_4flcsrc', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        '_5Dr-KxPU6mUm8OHZ' // Public Key
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you within 12 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -208,9 +245,14 @@ const ContactSection = () => {
                 </div>
               </div>
               
-              <Button type="submit" className="w-full btn-hero text-lg py-6 animate-slide-up" style={{animationDelay: "1s"}}>
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full btn-hero text-lg py-6 animate-slide-up" 
+                style={{animationDelay: "1s"}}
+              >
                 <Send className="w-5 h-5 mr-3" />
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
             
