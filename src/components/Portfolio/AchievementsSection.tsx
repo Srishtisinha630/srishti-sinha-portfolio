@@ -70,7 +70,7 @@ const AchievementsSection = () => {
                     <div className={`w-16 h-16 bg-gradient-to-r ${achievement.color} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/50 rounded-full animate-ping"></div>
+                    
                   </div>
                   <h3 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">{achievement.category}</h3>
                 </div>
@@ -89,12 +89,11 @@ const AchievementsSection = () => {
         </div>
         
         {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { number: "4+", label: "Hackathons Led", delay: "0.8s" },
-            { number: "2+", label: "Certifications", delay: "1s" },
-            { number: "3", label: "Major Projects", delay: "1.2s" },
-            { number: "1", label: "Academic Topper", delay: "1.4s" }
+            { number: "5+", label: "Certifications", delay: "1s" },
+            { number: "3", label: "Major Projects", delay: "1.2s" }
           ].map((stat, index) => (
             <div key={index} className="text-center group animate-scale-in hover-lift" style={{animationDelay: stat.delay}}>
               <div className="relative mb-4">

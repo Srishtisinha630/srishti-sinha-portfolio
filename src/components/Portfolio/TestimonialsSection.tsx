@@ -68,19 +68,6 @@ const TestimonialsSection = () => {
             </div>)}
         </div>
         
-        {/* Call to Action */}
-        <div className="mt-16 text-center bg-gradient-primary rounded-2xl p-8 text-white">
-          <h3 className="text-2xl font-bold mb-4">Ready to Work Together?</h3>
-          <p className="mb-6 opacity-90">
-            Let's collaborate on your next project and create something amazing together.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            
-            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors duration-300">
-              View My Work
-            </button>
-          </div>
-        </div>
       </div>
     </section>;
 };

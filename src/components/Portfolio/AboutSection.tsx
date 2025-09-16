@@ -7,7 +7,7 @@ const AboutSection = () => {
   }, {
     icon: Target,
     title: "Strengths",
-    description: "Full Stack Development, API Engineering, SQL Optimization"
+    description: "Full Stack Development, API Engineering, SQL Optimization, Data Structures and Algorithms, Debugging and Testing"
   }, {
     icon: Users,
     title: "Team Player",
@@ -34,7 +34,6 @@ const AboutSection = () => {
                   <div className="w-20 h-20 bg-gradient-primary rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Icon className="w-10 h-10 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent/30 rounded-full animate-ping group-hover:animate-bounce"></div>
                 </div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">{highlight.title}</h3>
                 <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">

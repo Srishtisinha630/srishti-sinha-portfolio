@@ -16,7 +16,7 @@ const ProjectsSection = () => {
         "Reduced input errors by 30%",
         "Delivered in Agile sprints with JIRA"
       ],
-      technologies: ["ASP.NET Core", "Angular", "EF Core", "JWT", "Identity", "JIRA"],
+      technologies: ["ASP.NET Core", "Angular", "EF Core", "JWT", "Identity", "JIRA", "HTML5", "CSS3", "JavaScript"],
       githubUrl: "https://github.com/Srishtisinha630",
       gradient: "from-purple-500 to-pink-500"
     },
@@ -69,7 +69,7 @@ const ProjectsSection = () => {
                         <div className={`w-16 h-16 bg-gradient-to-r ${project.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
                           <Icon className="w-8 h-8 text-white" />
                         </div>
-                        <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent/50 rounded-full animate-ping"></div>
+                        
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>

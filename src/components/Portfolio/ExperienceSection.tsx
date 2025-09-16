@@ -16,7 +16,7 @@ const ExperienceSection = () => {
         <div className="text-center mb-16">
           <h2 className="section-title">Experience</h2>
           <p className="section-subtitle">
-            Professional journey and key achievements in full stack development
+            Internship experience and key achievements in full stack development
           </p>
         </div>
         
@@ -29,7 +29,7 @@ const ExperienceSection = () => {
                   <div className="w-20 h-20 bg-gradient-primary rounded-3xl flex items-center justify-center hover:scale-110 transition-all duration-300">
                     <Building2 className="w-10 h-10 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-ping"></div>
+                  
                 </div>
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold gradient-text-enhanced">Cognizant Technology Solutions</h3>
@@ -52,10 +52,9 @@ const ExperienceSection = () => {
                         className="flex items-start space-x-4 group animate-slide-up hover-lift p-4 rounded-xl hover:bg-secondary/20 transition-all duration-300"
                         style={{animationDelay: `${index * 0.1}s`}}
                       >
-                        <div className="relative">
-                          <CheckCircle className="w-6 h-6 text-accent mt-1 flex-shrink-0 group-hover:scale-125 group-hover:text-primary transition-all duration-300" />
-                          <div className="absolute -inset-1 bg-accent/20 rounded-full opacity-0 group-hover:opacity-100 animate-ping"></div>
-                        </div>
+                  <div className="relative">
+                    <CheckCircle className="w-6 h-6 text-accent mt-1 flex-shrink-0 group-hover:scale-125 group-hover:text-primary transition-all duration-300" />
+                  </div>
                         <span className="leading-relaxed text-base group-hover:text-foreground transition-colors duration-300">{achievement}</span>
                       </div>
                     ))}
@@ -65,7 +64,7 @@ const ExperienceSection = () => {
                 <div className="space-y-4">
                   <h5 className="text-lg font-semibold text-muted-foreground">Technologies Used</h5>
                   <div className="flex flex-wrap gap-3">
-                    {["ASP.NET Core", "Angular", "SQL Server", "EF Core", "NUnit", "Moq", "LINQ", "Repository Pattern"].map((tech, index) => (
+                    {["ASP.NET Core", "Angular", "SQL Server", "EF Core", "NUnit", "Moq", "LINQ", "Repository Pattern", "HTML5", "CSS3", "JavaScript"].map((tech, index) => (
                       <span 
                         key={index} 
                         className="skill-tag hover:scale-110 animate-scale-in"
