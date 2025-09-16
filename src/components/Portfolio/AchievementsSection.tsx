@@ -97,10 +97,9 @@ const AchievementsSection = () => {
           ].map((stat, index) => (
             <div key={index} className="text-center group animate-scale-in hover-lift" style={{animationDelay: stat.delay}}>
               <div className="relative mb-4">
-                <div className="text-5xl font-bold gradient-text-enhanced mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-5xl font-bold gradient-text-enhanced mb-2">
                   {stat.number}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
               </div>
               <p className="text-muted-foreground font-medium group-hover:text-foreground transition-colors duration-300">{stat.label}</p>
             </div>

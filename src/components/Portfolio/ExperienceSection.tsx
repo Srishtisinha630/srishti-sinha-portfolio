@@ -64,7 +64,7 @@ const ExperienceSection = () => {
                 <div className="space-y-4">
                   <h5 className="text-lg font-semibold text-muted-foreground">Technologies Used</h5>
                   <div className="flex flex-wrap gap-3">
-                    {["ASP.NET Core", "Angular", "SQL Server", "EF Core", "NUnit", "Moq", "LINQ", "Repository Pattern", "HTML5", "CSS3", "JavaScript"].map((tech, index) => (
+                    {["ASP.NET Core", "Angular", "SQL Server", "EF Core", "NUnit", "Moq", "LINQ", "Repository Pattern", "HTML5", "CSS3", "JavaScript", "Agile", "Scrum", "Sprint Planning"].map((tech, index) => (
                       <span 
                         key={index} 
                         className="skill-tag hover:scale-110 animate-scale-in"

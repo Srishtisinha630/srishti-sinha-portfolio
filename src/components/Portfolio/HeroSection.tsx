@@ -29,9 +29,11 @@ const HeroSection = () => {
                 Developer
               </h1>
               
-              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-slide-up" style={{
-              animationDelay: "0.2s"
-            }}>Full Stack Developer Intern skilled in ASP.NET Core, Angular, SQL, and JavaScript. Experienced in building secure APIs, scalable backend systems, and responsive UIs with strong problem-solving and Data Structures &amp; Algorithms skills in Agile environments.</p>
+               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-slide-up" style={{
+               animationDelay: "0.2s"
+             }}>Full Stack Developer | ASP.NET Core & Angular | Passion for Scalable Systems
+             <br />
+             <span className="text-lg">Specialized in building scalable enterprise applications with .NET Core and Angular, aspiring to grow as a Software Development Engineer.</span></p>
             </div>
             
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{
@@ -72,7 +74,7 @@ const HeroSection = () => {
             
             <div className="relative hover-lift">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
-              <img src={profilePhoto} alt="Srishti Sinha - Full Stack Developer" className="relative w-full max-w-md mx-auto rounded-3xl shadow-hover animate-float z-10 border border-border/20" />
+              <img src={profilePhoto} alt="Srishti Sinha - Full Stack Developer" className="relative w-full max-w-md mx-auto rounded-full shadow-hover animate-float z-10 border border-border/20" />
             </div>
             
             {/* Decorative Elements */}

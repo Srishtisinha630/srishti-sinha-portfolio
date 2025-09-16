@@ -73,21 +73,19 @@ const SkillsSection = () => {
           })}
         </div>
         
-        {/* Skill Level Indicators */}
         <div className="mt-20 glass-card p-12 animate-slide-up" style={{animationDelay: "0.8s"}}>
           <h3 className="text-3xl font-bold text-center mb-12 gradient-text-enhanced">Proficiency Levels</h3>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { percentage: "90%", title: "Backend Development", skills: "ASP.NET Core, EF Core, SQL", color: "from-primary to-accent", delay: "1s" },
-              { percentage: "85%", title: "Frontend Development", skills: "Angular, JavaScript, HTML/CSS", color: "from-green-500 to-teal-500", delay: "1.2s" },
-              { percentage: "88%", title: "Database & DevOps", skills: "SQL Server, Git, Docker", color: "from-purple-500 to-pink-500", delay: "1.4s" }
+              { level: "Advanced", title: "Backend Development", skills: "ASP.NET Core, EF Core, SQL", color: "from-primary to-accent", delay: "1s" },
+              { level: "Proficient", title: "Frontend Development", skills: "Angular, JavaScript, HTML/CSS", color: "from-green-500 to-teal-500", delay: "1.2s" },
+              { level: "Intermediate", title: "Database & DevOps", skills: "SQL Server, Git, Docker", color: "from-purple-500 to-pink-500", delay: "1.4s" }
             ].map((proficiency, index) => (
               <div key={index} className="text-center group animate-scale-in hover-lift" style={{animationDelay: proficiency.delay}}>
                 <div className="relative mb-6">
-                  <div className={`w-28 h-28 bg-gradient-to-r ${proficiency.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-500`}>
-                    <span className="text-3xl font-bold text-white">{proficiency.percentage}</span>
+                  <div className={`w-32 h-16 bg-gradient-to-r ${proficiency.color} rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-all duration-500`}>
+                    <span className="text-lg font-bold text-white">{proficiency.level}</span>
                   </div>
-                  <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <h4 className="font-bold mb-3 text-xl group-hover:text-primary transition-colors duration-300">{proficiency.title}</h4>
                 <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">{proficiency.skills}</p>
