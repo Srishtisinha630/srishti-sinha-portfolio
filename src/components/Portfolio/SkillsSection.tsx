@@ -78,8 +78,8 @@ const SkillsSection = () => {
           <div className="grid md:grid-cols-3 gap-12">
             {[
               { level: "Advanced", title: "Backend Development", skills: "ASP.NET Core, EF Core, SQL", color: "from-primary to-accent", delay: "1s" },
-              { level: "Proficient", title: "Frontend Development", skills: "Angular, JavaScript, HTML/CSS", color: "from-green-500 to-teal-500", delay: "1.2s" },
-              { level: "Intermediate", title: "Database & DevOps", skills: "SQL Server, Git, Docker", color: "from-purple-500 to-pink-500", delay: "1.4s" }
+              { level: "Advanced", title: "Frontend Development", skills: "Angular, JavaScript, HTML/CSS", color: "from-green-500 to-teal-500", delay: "1.2s" },
+              { level: "Proficient", title: "Database & DevOps", skills: "SQL Server, Git, Docker", color: "from-purple-500 to-pink-500", delay: "1.4s" }
             ].map((proficiency, index) => (
               <div key={index} className="text-center group animate-scale-in hover-lift" style={{animationDelay: proficiency.delay}}>
                 <div className="relative mb-6">
