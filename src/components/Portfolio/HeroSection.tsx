@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
-
 const HeroSection = () => {
   const downloadResume = () => {
     const link = document.createElement('a');
@@ -11,9 +10,7 @@ const HeroSection = () => {
     link.click();
     document.body.removeChild(link);
   };
-
-  return (
-    <section className="hero-section">
+  return <section className="hero-section">
       {/* Background Elements */}
       <div className="floating-element top-20 left-10 w-32 h-32 bg-primary/5 rounded-full animate-bounce-slow"></div>
       <div className="floating-element top-40 right-20 w-24 h-24 bg-accent/10 rounded-full"></div>
@@ -32,39 +29,27 @@ const HeroSection = () => {
                 Developer
               </h1>
               
-              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-slide-up" style={{animationDelay: "0.2s"}}>
-                Passionate about building scalable backend systems, designing secure APIs, 
-                and creating user-friendly Angular applications. I thrive in Agile environments 
-                and love solving complex problems.
-              </p>
+              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-slide-up" style={{
+              animationDelay: "0.2s"
+            }}>Full Stack Developer Intern skilled in ASP.NET Core, Angular, SQL, and JavaScript. Experienced in building secure APIs, scalable backend systems, and responsive UIs with strong problem-solving and Data Structures &amp; Algorithms skills in Agile environments.</p>
             </div>
             
-            <div className="flex flex-wrap gap-4 animate-slide-up" style={{animationDelay: "0.4s"}}>
-              <Button 
-                onClick={downloadResume}
-                size="lg" 
-                className="btn-hero px-8 py-4 text-base font-semibold"
-              >
+            <div className="flex flex-wrap gap-4 animate-slide-up" style={{
+            animationDelay: "0.4s"
+          }}>
+              <Button onClick={downloadResume} size="lg" className="btn-hero px-8 py-4 text-base font-semibold">
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume
               </Button>
             </div>
             
-            <div className="flex items-center space-x-8 pt-6 animate-slide-up" style={{animationDelay: "0.6s"}}>
-              <a 
-                href="https://github.com/Srishtisinha630" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-secondary/50 backdrop-blur-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:bg-primary/10"
-              >
+            <div className="flex items-center space-x-8 pt-6 animate-slide-up" style={{
+            animationDelay: "0.6s"
+          }}>
+              <a href="https://github.com/Srishtisinha630" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary/50 backdrop-blur-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:bg-primary/10">
                 <Github className="w-6 h-6" />
               </a>
-              <a 
-                href="https://linkedin.com/in/srishti-sinha-03aa3721b" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-secondary/50 backdrop-blur-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:bg-primary/10"
-              >
+              <a href="https://linkedin.com/in/srishti-sinha-03aa3721b" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary/50 backdrop-blur-sm text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:bg-primary/10">
                 <Linkedin className="w-6 h-6" />
               </a>
             </div>
@@ -87,11 +72,7 @@ const HeroSection = () => {
             
             <div className="relative hover-lift">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl"></div>
-              <img 
-                src={profilePhoto}
-                alt="Srishti Sinha - Full Stack Developer"
-                className="relative w-full max-w-md mx-auto rounded-3xl shadow-hover animate-float z-10 border border-border/20"
-              />
+              <img src={profilePhoto} alt="Srishti Sinha - Full Stack Developer" className="relative w-full max-w-md mx-auto rounded-3xl shadow-hover animate-float z-10 border border-border/20" />
             </div>
             
             {/* Decorative Elements */}
@@ -100,8 +81,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
