@@ -1,58 +1,86 @@
-🌐 Srishti Sinha – Portfolio
+🎶 EchoVerse
 
-This is my personal portfolio website showcasing my skills, projects, and experience.
+A Music Library Management System designed to organize, manage, and search music efficiently.
 
-🔗 Live Demo: srishti-sinha-portfolio.vercel.app
+EchoVerse is a full-stack web application that allows users to add, update, and categorize music tracks while ensuring secure authentication. It was built with Angular on the frontend and ASP.NET Core Web API with Entity Framework Core (Code-First) on the backend, showcasing scalable design principles and best practices in full-stack development.
 
-🚀 Tech Stack
+🚀 Features
 
-Vite – Fast build tool
+🔐 Secure Authentication & Authorization using JWT with ASP.NET Core Identity
 
-React – Frontend library
+🎵 CRUD Operations for Music and Category entities
 
-TypeScript – Strongly typed JavaScript
+🔎 Search Functionality for quick access to songs
 
-shadcn/ui – Modern UI components
+📱 Responsive UI built with Angular
 
-Tailwind CSS – Utility-first styling
+🌐 RESTful API with Entity Framework Core (Code-First) for database management
 
-🛠️ Getting Started
+🛠️ Tech Stack
 
-Follow these steps to run the project locally:
+Frontend: Angular
 
-1. Clone the repository
-git clone https://github.com/Srishtisinha630/srishti-sinha-portfolio.git
-cd srishti-sinha-portfolio
+Backend: ASP.NET Core Web API
 
-2. Install dependencies
-npm install
+Database: SQL Server (Entity Framework Core - Code First)
 
-3. Start the development server
-npm run dev
-
-
-The app will be available at http://localhost:5173
- (default Vite port).
-
-📦 Deployment
-
-This portfolio is deployed on Vercel.
-It can also be deployed easily to Netlify or GitHub Pages.
+Authentication: JWT + ASP.NET Core Identity
 
 📂 Project Structure
-srishti-sinha-portfolio/
-├── public/              # Static assets (images, favicon, etc.)
-├── src/                 # Main source code
-│   ├── components/      # Reusable components
-│   ├── pages/           # Page sections (Home, About, Projects, Contact)
-│   ├── assets/          # Images, icons, etc.
-│   └── styles/          # Tailwind configs / custom styles
-├── package.json         # Dependencies & scripts
-├── vite.config.ts       # Vite configuration
-└── tsconfig.json        # TypeScript configuration
+Echoverse/
+│── Cts_Echoverse/        # Backend (.NET Core Web API with EF Core)
+│── EchoVerse_UI/         # Frontend (Angular)
+│── README.md             # Project Documentation
 
-📬 Contact
+📌 Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/Srishtisinha630/Echoverse.git
+cd Echoverse
 
-💻 GitHub: Srishtisinha630
+2️⃣ Backend Setup (ASP.NET Core Web API)
+cd Cts_Echoverse
 
-🌐 Portfolio: srishti-sinha-portfolio.vercel.app
+
+Configure the connection string in appsettings.json
+
+Run migrations:
+
+dotnet ef database update
+
+
+Start the backend server:
+
+dotnet run
+
+3️⃣ Frontend Setup (Angular)
+cd EchoVerse_UI
+npm install
+ng serve -o
+
+
+Frontend will be available at http://localhost:4200
+
+Backend API will run at http://localhost:5000
+ (or as configured).
+
+📖 Usage
+
+Register/Login with JWT authentication
+
+Add or manage Music Tracks and Categories
+
+Use search to quickly filter songs
+
+Explore music in an organized UI
+
+🧩 Agile Process
+
+Developed in 2 Sprints following Agile methodology
+
+Tracked with JIRA board using Epics, User Stories, and Tasks
+
+Team project (5 members) completed in 6 weeks
+
+📄 License
+
+This project is for learning and demonstration purposes.
